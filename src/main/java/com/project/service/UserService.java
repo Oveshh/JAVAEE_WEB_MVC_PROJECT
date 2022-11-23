@@ -7,6 +7,7 @@ import com.project.bean.User;
 
 import java.util.List;
 
+// user 接口。 也是后端的操作接口。连通数据库。DAO层
 public interface UserService {
     // CRUD
     String createUser(int id, String name, String pwd);

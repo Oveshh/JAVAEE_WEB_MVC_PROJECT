@@ -28,6 +28,8 @@ public class MongoRepo {
     private Bson filter = null;
     private Bson query = null;
 
+
+	// 设置数据库连接客户端
     public MongoRepo(String domain, int port, String databaseName,
                      String userName, String pass){
         database = databaseName;
@@ -67,6 +69,8 @@ public class MongoRepo {
         }
         return findRes;
     }
+	
+	// 根据用户查询
     public List<User> findByName(String coll, String name){
         MongoCollection<Document> collection = db.getCollection(coll);
         FindIterable<Document> cur = collection.find();
@@ -84,6 +88,8 @@ public class MongoRepo {
         }
         return findRes;
     }
+	
+	// 更新数据
     public String update(String coll, User renew){
         MongoCollection<Document> collection = db.getCollection(coll);
         // 不是新创建一个项，而是set
@@ -106,6 +112,8 @@ public class MongoRepo {
         }
         return "delete user: "+name+" failed";
     }
+	
+	// 删除数据库所有信息操作
     public String deleteAll(String coll){
         MongoCollection<Document> collection = db.getCollection(coll);
         Document query = new Document();

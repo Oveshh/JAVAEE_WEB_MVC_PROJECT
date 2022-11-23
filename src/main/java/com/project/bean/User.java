@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+//User 实体类。 POJO 与数据库中字段实现映射
 public class User {
     private  Integer id;
     private  String name;

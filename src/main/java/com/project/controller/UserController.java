@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 @Controller
 public class UserController {
     //持有业务逻辑对象
@@ -60,6 +61,7 @@ public class UserController {
         return map;
     }
 
+
     @RequestMapping(value = "/index")
     public String home(HttpServletRequest request, HttpServletResponse response){
         System.out.println("被调用了方法index");
@@ -103,6 +105,7 @@ public class UserController {
         }
         return  "info.jsp";
     }
+	
 
     //添加用户
     @RequestMapping(value = "/user/add")
@@ -117,6 +120,7 @@ public class UserController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+		
         return "forward:/user.jsp";
     }
 
@@ -209,4 +213,5 @@ public class UserController {
         }
         return "forward:/user.jsp";
     }
+	
 }
